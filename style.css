@@ -1,8 +1,9 @@
 body {
-    background-image: url(https://static.wikia.nocookie.net/batman/images/3/32/BatmanArkhamKnightGothamCity.jpg/revision/latest?cb=20140530010522);
+    background-image: url(https://cdn.vox-cdn.com/thumbor/UCNXs0XwX6WPPzMM3IGzuF5H1y0=/471x0:3927x2304/1280x854/cdn.vox-cdn.com/uploads/chorus_image/image/46660972/game-offline-Batman-Arkham-Knight-chinh-thuc-chao-ban-season-pass-02.0.0.jpg);
     color: rgb(45, 45, 45);
     padding: 10px;
     font-family: arial;
+    background-size: 100%;
 }
 #all-contents {
   max-width: 800px;
