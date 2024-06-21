@@ -91,7 +91,7 @@ let halleImage;
 let animationDetails = {};
 
 var collectableList = {
-  database: { image: "images/collectables/database.png" },
+  batarang: { image: "images/collectables/batarang.png" },
   diamond: { image: "images/collectables/diamond-head.png" },
   grace: { image: "images/collectables/grace-head.png" },
   kennedi: { image: "images/collectables/kennedi-head.png" },
