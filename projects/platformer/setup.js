@@ -91,9 +91,9 @@ let halleImage;
 let animationDetails = {};
 
 var collectableList = {
-  batarang: { image: "images/collectables/batarang.png" },
-  diamond: { image: "images/collectables/diamond-head.png" },
-  grace: { image: "images/collectables/grace-head.png" },
+  batarang: { image: "images/collectables/Batarang.png" },
+  batclaw: { image: "images/collectables/Batclaw.png" },
+  smoke: { image: "images/collectables/smoke.png" },
   kennedi: { image: "images/collectables/kennedi-head.png" },
   max: { image: "images/collectables/max-head.png" },
   steve: { image: "images/collectables/steve-head.png" },
