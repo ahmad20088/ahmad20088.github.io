@@ -14,8 +14,8 @@
 			display: block;
 			position: absolute;
 			top: 0px;
-			left: 700px;  /* <--- Change me! */
-			margin: 0px;
+			left: 0px;  /* <--- Change me! */
+			
 
 			background-repeat: no-repeat;
 			background-image: url(https://img.freepik.com/premium-photo/batman-logo-wallpapers-wallpaper-cave-generative-ai_958108-12217.jpg);
@@ -57,6 +57,7 @@
 			// moves the Box to a new position on the screen along the X-Axis
 			function moveBoxTo(newPositionX) {
 				box.css("left", newPositionX);
+				box.css("top", newPositionY);
 			}
 
 			// changes the text displayed on the Box
@@ -69,11 +70,11 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			var positionX = 10;
+			var newPositionX = 10;
 			var speedx = 10;
 			var points = 0;
-			var positionY = 10;
-			var speedY = 10;
+			var newPositionY = 10;
+			var speedy = 10;
 			var boardHeight = board.height();
 
 			
@@ -83,21 +84,19 @@
 			turn it around! 
 			*/
 			function update() {
-			 positionX = speedx+positionX
-			 positionY = speedY+positionY
-             moveBoxTo(positionX, positionY);
-			 box.css("left", positionX);
-			 box.css("top", positionY);
+			 newPositionX = speedx+newPositionX
+			 newPositionY = speedy+newPositionY
+             moveBoxTo(newPositionX, newPositionY);
+			 
 
-			 console.log(speedx)
-			 console.log(speedY)
-			 if (positionX > boardWidth) {speedx = -speedx;}
+			 
+			 if (newPositionX > boardWidth) {speedx = -speedx;}
 
-			 if (positionX < 0) {speedx = -speedx}
+			 if (newPositionX < 0) {speedx = -speedx}
 
-			 if (positionY < 0) {speedY = -speedY;}
+			 if (newPositionY < 0) {speedy = -speedy;}
 
-			 if (positionY > boardHeight+1000) {speedY = -speedY;}
+			 if (newPositionY > boardHeight) {speedY = -speedy;}
 			};
 
 			/* 
@@ -106,16 +105,15 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				positionX = Math.random() + 1000;
-				positionY = Math.random() + 1000;
+				
 				points = points + 1
 				changeBoxText(points)
 				speedx+= 5;
 				if (speedx>0) {speedx=speedx+3}
 				else if (speedx<0) {speedx=speedx-3}
                 
-				if (speedY>0) {speedY=speedY+10}
-				else if (speedY<0) {speedY-speedY-3}
+				if (speedy>0) {speedy=speedy+10}
+				else if (speedy<0) {speedy=speedy-3}
 
 			};
 		})();
