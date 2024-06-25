@@ -110,10 +110,11 @@
 				positionY = Math.random() + 1000;
 				points = points + 1
 				changeBoxText(points)
-				if (speedx>0) {speedx-speedx+3}
-				else if (speedx<0) {speedx-speedx-3}
+				speedx+= 5;
+				if (speedx>0) {speedx=speedx+3}
+				else if (speedx<0) {speedx=speedx-3}
                 
-				if (speedY>0) {speedY-speedY+3}
+				if (speedY>0) {speedY=speedY+10}
 				else if (speedY<0) {speedY-speedY-3}
 
 			};
