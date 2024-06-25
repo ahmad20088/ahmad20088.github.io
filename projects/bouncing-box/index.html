@@ -8,19 +8,26 @@
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: teal;
 			font-size: 300%;
 			text-align: center;
 			user-select: none;
 			display: block;
 			position: absolute;
-			top: 100px;
-			left: 0px;  /* <--- Change me! */
-		}
+			top: 0px;
+			left: 700px;  /* <--- Change me! */
+			margin: 0px;
+
+			background-repeat: no-repeat;
+			background-image: url(https://img.freepik.com/premium-photo/batman-logo-wallpapers-wallpaper-cave-generative-ai_958108-12217.jpg);
+            background-size: 100%;}
+			
+		
 		.board{
-			height: 100vh;
-		}
-	</style>
+			height: 10vh;
+		 background-repeat: no-repeat;
+		 background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEim_bZFiVFpMOsgf1e-wa7fwhDqbHtxoXnbtLM_HVJ23w4XGwyeiI3rt7d7t0_N-bQQv5-8P4hjmaqMW7O4hEwF-VnHjY1T99VwjINtpE2D3dBlCkZcG49DBQ3Ic10CBjf7pVeNdwEqYxjzoThw46gsCdGF7TubU7qHKD-ckawOveCgfAz5rtV-egRqnjmP/s1600/ghotam-city-batman-wallpaper-4k.webp);
+		 background-size: 100%;}
+     </style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
 </head>
@@ -62,7 +69,12 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			
+			var positionX = 10;
+			var speedx = 10;
+			var points = 0;
+			var positionY = 10;
+			var speedY = 10;
+			var boardHeight = board.height();
 
 			
 			/* 
@@ -71,8 +83,21 @@
 			turn it around! 
 			*/
 			function update() {
-				
+			 positionX = speedx+positionX
+			 positionY = speedY+positionY
+             moveBoxTo(positionX, positionY);
+			 box.css("left", positionX);
+			 box.css("top", positionY);
 
+			 console.log(speedx)
+			 console.log(speedY)
+			 if (positionX > boardWidth) {speedx = -speedx;}
+
+			 if (positionX < 0) {speedx = -speedx}
+
+			 if (positionY < 0) {speedY = -speedY;}
+
+			 if (positionY > boardHeight+1000) {speedY = -speedY;}
 			};
 
 			/* 
@@ -81,8 +106,15 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				
-
+				positionX = Math.random() + 1000;
+				positionY = Math.random() + 1000;
+				points = points + 1
+				changeBoxText(points)
+				if (speedx>0) {speedx-speedx+3}
+				else if (speedx<0) {speedx-speedx-3}
+                
+				if (speedY>0) {speedY-speedY+3}
+				else if (speedY<0) {speedY-speedY-3}
 
 			};
 		})();
