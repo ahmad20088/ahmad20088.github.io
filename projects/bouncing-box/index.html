@@ -75,7 +75,7 @@
 			var points = 0;
 			var newPositionY = 10;
 			var speedy = 10;
-			var boardHeight = board.height();
+			var boardHeight = jQuery(window).height();
 
 			
 			/* 
@@ -96,7 +96,7 @@
 
 			 if (newPositionY < 0) {speedy = -speedy;}
 
-			 if (newPositionY > boardHeight) {speedY = -speedy;}
+			 if (newPositionY > boardHeight) {speedy = -speedy;}
 			};
 
 			/* 
